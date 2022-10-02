@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
+from helpers.models import BaseModel
+from student.models import Student
+from sponsor.models import Sponsor
 
 
 # Create your models here.
@@ -18,3 +21,12 @@ class User(AbstractUser):
         swappable = "AUTH_USER_MODEL"
         verbose_name = _("user")
         verbose_name_plural = _("users")
+
+
+class StudentSponsor(BaseModel):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="sponsor")
+    sponsor = models.ForeignKey(Sponsor, on_delete=models.CASCADE, related_name="student")
+    price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+
+    def __str__(self):
+        return f"{self.student.name} received {self.price} UZS from {self.sponsor.name}"
