@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/swagger/schema/', schema_view.with_ui('swagger', cache_timeout=0), name="swagger-schema"),
     path('__debug__/', include(debug_toolbar.urls)),
+    path('api/sponsor/', include('sponsor.urls')),
+    path('api/student/', include('student.urls')),
 ]
