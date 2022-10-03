@@ -22,4 +22,5 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
     path('api/sponsor/', include('sponsor.urls')),
     path('api/student/', include('student.urls')),
+    path('api/student-sponsor/', include('common.urls')),
 ]

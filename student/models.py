@@ -1,6 +1,9 @@
 from django.db import models
 from helpers.models import BaseModel
 
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 
 class University(BaseModel):
     name = models.CharField("Nomi", max_length=128)
@@ -32,3 +35,8 @@ class Student(BaseModel):
     class Meta:
         verbose_name = "student"
         verbose_name_plural = 'students'
+
+
+# @receiver(post_save, sender=Student)
+# def my_handler(sender, **kwargs):
+#     print(1)

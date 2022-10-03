@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'debug_toolbar',
+    'django_filters',
 
     'common',
     'sponsor',
@@ -139,6 +140,6 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
 try:
-    from .local_settings import *  # noqa
+    from .local_settings import *
 except ImportError:
-    pass  # noqa
+    pass

@@ -26,7 +26,7 @@ class User(AbstractUser):
 class StudentSponsor(BaseModel):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="sponsor")
     sponsor = models.ForeignKey(Sponsor, on_delete=models.CASCADE, related_name="student")
-    price = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
 
     def __str__(self):
-        return f"{self.student.name} received {self.price} UZS from {self.sponsor.name}"
+        return f"{self.student.name} received {self.amount} UZS from {self.sponsor.name}"
