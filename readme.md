@@ -16,14 +16,14 @@
 
 *StudentSponsor*
 
-*api/student-sponsor/add
-*api/student-sponsor/list
+* api/student-sponsor/add
+* api/student-sponsor/list
 
 *Dashboard*
 
-*api/dashboard
-*api/dashboardline/student
-*api/dashboardline/sponsor
+* api/dashboard
+* api/dashboardline/student
+* api/dashboardline/sponsor
 
 
 **Created by Dostonbek Tilavov**
